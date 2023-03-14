@@ -1,16 +1,16 @@
 import { DataSource } from "typeorm";
 import { UserInfo } from "./entities/User";
 import { ProductInfo } from "./entities/Product";
-
+import { db, host, userName, password } from "../config";
 const connection = new DataSource({
   type: "postgres",
-  database: "Teebay",
+  database: db,
   entities: [UserInfo, ProductInfo],
   logging: true,
   synchronize: true,
-  host: "localhost",
+  host: host,
   port: 6000,
-  username: "postgres",
-  password: "1470",
+  username: userName,
+  password: password,
 });
 export default connection;

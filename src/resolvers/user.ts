@@ -28,6 +28,17 @@ export class UserResolver {
     return products.length > 0 ? products : null;
   }
 
+  @Query(() => [ProductInfo], { nullable: true })
+  async getProductsOwned(
+    @Arg("ownerId", () => Int) ownerId: number
+  ): Promise<ProductInfo[] | null> {
+    const products = await ProductInfo.find({
+      where: { ownerId: ownerId },
+      relations: ["userId"],
+    });
+    return products.length > 0 ? products : null;
+  }
+
   @Query(() => UserInfo, { nullable: true })
   loginUser(
     @Arg("email", () => String)
