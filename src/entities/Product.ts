@@ -51,7 +51,7 @@ export class ProductInfo extends BaseEntity {
 
   @ManyToOne(() => UserInfo, (userId) => userId.products)
   @Field(() => Int)
-  userId: number;
+  userId: UserInfo;
 
   @Column()
   @Field(() => String)

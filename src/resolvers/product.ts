@@ -32,7 +32,7 @@ export class ProductResolver {
     @Arg("option", () => String)
     option: string,
     @Arg("userId", () => Int)
-    userId: number,
+    userId: UserInfo,
     @Arg("status", () => String)
     status: string,
     @Arg("ownerId", () => Int)

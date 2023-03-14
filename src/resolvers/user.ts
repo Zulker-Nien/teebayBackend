@@ -22,7 +22,7 @@ export class UserResolver {
     @Arg("userId", () => Int) userId: number
   ): Promise<ProductInfo[] | null> {
     const products = await ProductInfo.find({
-      where: { userId: userId },
+      where: { userId: { id: userId } },
       relations: ["userId"],
     });
     return products.length > 0 ? products : null;
