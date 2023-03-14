@@ -1,5 +1,6 @@
 import { Arg, Int, Mutation, Query, Resolver } from "type-graphql";
 import { ProductInfo } from "../entities/Product";
+import { UserInfo } from "../entities/User";
 
 @Resolver()
 export class ProductResolver {
@@ -31,7 +32,7 @@ export class ProductResolver {
     @Arg("option", () => String)
     option: string,
     @Arg("userId", () => Int)
-    userId: number
+    userId: UserInfo
   ): Promise<ProductInfo> {
     return ProductInfo.create({
       title,
