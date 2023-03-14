@@ -58,8 +58,8 @@ export class ProductInfo extends BaseEntity {
   status: string;
 
   @Column()
-  @Field(() => String)
-  owner: string;
+  @Field(() => Int)
+  ownerId: number;
 
   @Column()
   @Field(() => Boolean)

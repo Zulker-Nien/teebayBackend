@@ -35,8 +35,8 @@ export class ProductResolver {
     userId: number,
     @Arg("status", () => String)
     status: string,
-    @Arg("owner", () => String)
-    owner: string
+    @Arg("ownerId", () => Int)
+    ownerId: number
   ): Promise<ProductInfo> {
     return ProductInfo.create({
       title,
@@ -48,7 +48,7 @@ export class ProductResolver {
       isComplete: true,
       userId,
       status,
-      owner,
+      ownerId,
     }).save();
   }
 
@@ -80,6 +80,27 @@ export class ProductResolver {
     }
     try {
       ProductInfo.update({ id }, { title, categories });
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  @Mutation(() => Boolean, { nullable: true })
+  buyProduct(
+    @Arg("id", () => Int)
+    id: number,
+    @Arg("status", () => String)
+    status: string,
+    @Arg("ownerId", () => Int)
+    ownerId: number
+  ): boolean | null {
+    const product = ProductInfo.findOneBy({ id });
+    if (!product) {
+      return null;
+    }
+    try {
+      ProductInfo.update({ id }, { status, ownerId });
       return true;
     } catch {
       return false;
