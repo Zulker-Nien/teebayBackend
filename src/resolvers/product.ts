@@ -32,7 +32,11 @@ export class ProductResolver {
     @Arg("option", () => String)
     option: string,
     @Arg("userId", () => Int)
-    userId: UserInfo
+    userId: number,
+    @Arg("status", () => String)
+    status: string,
+    @Arg("owner", () => String)
+    owner: string
   ): Promise<ProductInfo> {
     return ProductInfo.create({
       title,
@@ -41,8 +45,10 @@ export class ProductResolver {
       price,
       rentPrice,
       option,
-      isComplete: false,
+      isComplete: true,
       userId,
+      status,
+      owner,
     }).save();
   }
 
@@ -63,15 +69,17 @@ export class ProductResolver {
   updateProduct(
     @Arg("id", () => Int)
     id: number,
-    @Arg("isComplete", () => Boolean)
-    isComplete: boolean
+    @Arg("title", () => String)
+    title: string,
+    @Arg("categories", () => [String])
+    categories: string[]
   ): boolean | null {
     const product = ProductInfo.findOneBy({ id });
     if (!product) {
       return null;
     }
     try {
-      ProductInfo.update({ id }, { isComplete });
+      ProductInfo.update({ id }, { title, categories });
       return true;
     } catch {
       return false;
