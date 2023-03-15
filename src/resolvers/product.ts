@@ -18,7 +18,7 @@ export class ProductResolver {
   }
 
   @Mutation(() => ProductInfo)
-  addProduct(
+  async addProduct(
     @Arg("title", () => String)
     title: string,
     @Arg("categories", () => [String])
@@ -47,7 +47,7 @@ export class ProductResolver {
       option,
       isComplete: true,
       userId,
-      status,
+      status: "Available",
       ownerId,
     }).save();
   }
