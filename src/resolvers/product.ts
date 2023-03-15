@@ -72,14 +72,25 @@ export class ProductResolver {
     @Arg("title", () => String)
     title: string,
     @Arg("categories", () => [String])
-    categories: string[]
+    categories: string[],
+    @Arg("description", () => String)
+    description: string,
+    @Arg("price", () => Int)
+    price: number,
+    @Arg("rentPrice", () => Int)
+    rentPrice: number,
+    @Arg("option", () => String)
+    option: string
   ): boolean | null {
     const product = ProductInfo.findOneBy({ id });
     if (!product) {
       return null;
     }
     try {
-      ProductInfo.update({ id }, { title, categories });
+      ProductInfo.update(
+        { id },
+        { title, categories, description, price, rentPrice, option }
+      );
       return true;
     } catch {
       return false;
