@@ -1,5 +1,7 @@
 # TEEBAY BackEnd Documentation
 
+## RUN THIS BACKEND FIRST AND THEN FRONT END.
+
 ## Steps
 
 ### Step 1: Create a postgresDb
@@ -16,4 +18,33 @@ then in a separate terminal, run the command:
 
 #### 2. `npm run dev`
 
-### Step 4: query, test backend from [http://localhost:4000/graphql](http://localhost:4000/graphql) your results to check the functionality
+### Step 4: Test out the schema from [http://localhost:4000/graphql](http://localhost:4000/graphql) your results to check the functionalities available.
+
+## Dependencies Used for this project are:
+
+1.  apollo-server-express
+2.  bcryptjs
+3.  cors
+4.  express
+5.  graphql
+6.  jsonwebtoken
+7.  nodemon
+8.  pg
+9.  reflect-metadata
+10. ts-node
+11. type-graphql
+12. typeorm
+
+## Backend File Connection used for this project:
+
+Using DataSource, Typeorm loads data into the connection.
+
+## Entities
+
+1.  User
+2.  Product
+
+## Resolver
+
+1.  User
+2.  Product
