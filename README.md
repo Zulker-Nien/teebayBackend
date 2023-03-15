@@ -10,10 +10,8 @@
 
 ### Available Scripts
 
-You will be needing:
-
-### `npm run watch`
+### 1. `npm run watch`
 
 then in a separate terminal, run the command:
 
-### `npm run dev`
+### 2. `npm run dev`
