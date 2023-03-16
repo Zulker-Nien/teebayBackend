@@ -43,7 +43,18 @@ Using DataSource, Typeorm loads data into the connection.
 
 ### 1. User
 
-#### Fields: id:Int, created:Date, updated:Date, firstName:string, lastName:string, address:string, phoneNumber:string, password:string, products:ProductInfo[], isComplete:boolean
+#### Fields:
+
+id:Int,
+created:Date,
+updated:Date,
+firstName:string,
+lastName:string,
+address:string,
+phoneNumber:string,
+password:string,
+products:ProductInfo[],
+isComplete:boolean
 
 ### 2. Product
 
