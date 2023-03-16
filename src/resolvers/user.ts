@@ -37,11 +37,11 @@ export class UserResolver {
     return UserInfo.findOneBy({ id });
   }
 
-  @Query(() => String)
-  @UseMiddleware(isAuth)
-  bye(@Ctx() { payload }: MyContext) {
-    return `your userId is: ${payload!.userId}`;
-  }
+  // @Query(() => String)
+  // @UseMiddleware(isAuth)
+  // bye(@Ctx() { payload }: MyContext) {
+  //   return `your userId is: ${payload!.userId}`;
+  // }
   @Query(() => [ProductInfo], { nullable: true })
   async getProductsByUserId(
     @Arg("userId", () => Int) userId: number
