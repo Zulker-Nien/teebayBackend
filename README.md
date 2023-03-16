@@ -45,15 +45,15 @@ Using DataSource, Typeorm loads data into the connection.
 
 #### Fields:
 
-id:Int,
-created:Date,
-updated:Date,
-firstName:string,
-lastName:string,
-address:string,
-phoneNumber:string,
-password:string,
-products:ProductInfo[],
+id:Int
+created:Date
+updated:Date
+firstName:string
+lastName:string
+address:string
+phoneNumber:string
+password:string
+products:ProductInfo[]
 isComplete:boolean
 
 ### 2. Product
