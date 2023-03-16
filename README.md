@@ -41,8 +41,11 @@ Using DataSource, Typeorm loads data into the connection.
 
 ## Entities
 
-1.  User
-2.  Product
+### 1. User
+
+#### Fields: id:Int, created:Date, updated:Date, firstName:string, lastName:string, address:string, phoneNumber:string, password:string, products:ProductInfo[], isComplete:boolean
+
+### 2. Product
 
 ## Resolver
 
